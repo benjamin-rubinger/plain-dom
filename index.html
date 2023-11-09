@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8">
+    <link rel="icon" type="image/ico" sizes="16x16" href="image/favicon.ico">
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/plain-dom.js"></script>
+    <title>plain dom - benjamin rubinger</title>
+</head>
+<body>
+<main>
+</main>
+<script>
+    function plainDomFetchOnComplete() {
+        const domString = `
+p.string-literal-dom
+  text you can create dom pieces in a separate file or provide a local string
+p
+  text with minimal setup you can write easier html in your html files
+`;
+        plainDom(domString, '.second-plain-dom-container');
+    }
+    plainDomFetch('example.dom', 'main', plainDomFetchOnComplete);
+</script>
+</body>
+</html>

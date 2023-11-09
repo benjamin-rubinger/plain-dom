@@ -1,0 +1,31 @@
+h1
+  text plain dom example
+p#first-example.example
+  html &quot;plain dom syntax&quot;
+p
+  span
+    html each line starts with an html&nbsp;
+  b
+    html tag&nbsp;
+  span
+    text and then a space. one line per tag. indented tags will be nested the same as the indentation.
+  div
+    text no need to close tags, the white space is significant.
+p
+  text in plain dom, text and html nodes are treated like tags. they are on their own line and start with the tag name text or html and then a space, even though text nodes arent represented that way in html syntax. text and html nodes do not accept ids, classes or other properties. they need to be nested under a tag that can have text, such as div, span, p, h1, h2, etc.
+p
+  text you can only have one text or one html tag under a parent
+p#id-example
+  text define the id for a tag using the id css selector syntax # immediately after the tag, no space
+p.class-example.example.as-many-as-you-want
+  text define classes for a tag using the class css selector "." immediately after the tag, no space. add multiple classes by chaining ., just like css selectors
+p.other-attributes data-my-attribute value data-another-attribute 0
+  text you can set any additional additional attributes on a tag by adding them after the tag, separated by spaces. these are grouped pairwise but there is no other syntax or quoting for them. you can hide an element using the attribute pair display none.
+label for example-input
+  html example form input&nbsp;
+  input#example-input type number min 0
+div.container
+  div.inner-container
+    div.second-plain-dom-container
+    div.inner
+      text thats about it! thank you for trying plain dom :)
