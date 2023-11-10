@@ -51,9 +51,12 @@ function parseDom(lines, selector) {
         if (!line) {
             continue;
         }
-        console.log(line);
+//        console.log(line);
         let depth = count_indents(line);
         let tl = line.trim();
+        if (!tl) {
+            continue;
+        }
         if (tl.startsWith('text ')) {
             //            console.log(`setting text of ${$parents[$parents.length - 1][0].classList} to ${tl.substring(5)}`);
             $parents[$parents.length - 1].text(tl.substring(5));
