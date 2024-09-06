@@ -84,11 +84,13 @@ function parseDom(lines, selector) {
         } else if (depth < previousDepth) {
             for (let i = previousDepth; i >= depth; i--) {
                 //                console.log(`depth less than or equal to previous ${i}`);
-                let $child = $parents.pop();
-                //                console.log(`appending ${$child[0].classList} to ${$parents[$parents.length - 1][0].classList}`);
-                $child.removeAttr('data-simple-dom-depth');
-                $parents[$parents.length - 1].append($child);
-                if (i === 1) {
+                const childDepth = +$parents[$parents.length - 1].attr('data-simple-dom-depth');
+                if (childDepth > 0) {
+                    let $child = $parents.pop();
+                    $child.removeAttr('data-simple-dom-depth');
+                    //                console.log(`appending ${$child[0].classList} to ${$parents[$parents.length - 1][0].classList}`);
+                    $parents[$parents.length - 1].append($child);
+                } else {
                     break;
                 }
             }
